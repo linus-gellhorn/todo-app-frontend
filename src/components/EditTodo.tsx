@@ -61,7 +61,7 @@ export default function EditTodo(props: EditTodoProps): JSX.Element {
                 data-dismiss="modal"
                 onClick={handleEdit}
               >
-                Edit
+                Save
               </button>
               <button
                 type="button"

@@ -4,6 +4,7 @@ export interface Todo {
   id: number;
   description: string;
   creation_date: string;
+  completed: boolean;
 }
 
 interface ListTodosProps {
@@ -19,6 +20,7 @@ export default function ListTodos(props: ListTodosProps): JSX.Element {
         <table className="table text-center mt-5">
           <thead>
             <tr>
+              <th>Completion Status</th>
               <th>Description</th>
               <th>Creation Date</th>
               <th>Edit</th>
@@ -31,6 +33,7 @@ export default function ListTodos(props: ListTodosProps): JSX.Element {
                 key={item.id}
                 description={item.description}
                 creation_date={item.creation_date}
+                completed={item.completed}
                 id={item.id}
                 getTodos={props.getTodos}
               />
