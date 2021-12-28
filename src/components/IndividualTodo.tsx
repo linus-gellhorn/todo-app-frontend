@@ -1,7 +1,6 @@
 import axios from "axios";
 import { APIBaseURL } from "../utils/APIBaseURL";
 import EditTodo from "./EditTodo";
-// import { useState } from "react";
 
 interface IndividualTodoProps {
   id: number;
@@ -12,15 +11,12 @@ interface IndividualTodoProps {
 }
 
 function IndividualTodo(props: IndividualTodoProps): JSX.Element {
-  // const [completed, setCompleted] = useState(false);
-
   const handleDelete = async () => {
     await axios.delete(`${APIBaseURL}todos/${props.id}`);
     props.getTodos();
   };
 
   const handleComplete = async () => {
-    // setCompleted(!completed);
     await axios.patch(`${APIBaseURL}todos/${props.id}`, {
       completed: !props.completed,
     });
