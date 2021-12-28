@@ -3,6 +3,7 @@ import IndividualTodo from "./IndividualTodo";
 export interface Todo {
   id: number;
   description: string;
+  creation_date: string;
 }
 
 interface ListTodosProps {
@@ -19,6 +20,7 @@ export default function ListTodos(props: ListTodosProps): JSX.Element {
           <thead>
             <tr>
               <th>Description</th>
+              <th>Creation Date</th>
               <th>Edit</th>
               <th>Delete</th>
             </tr>
@@ -28,6 +30,7 @@ export default function ListTodos(props: ListTodosProps): JSX.Element {
               <IndividualTodo
                 key={item.id}
                 description={item.description}
+                creation_date={item.creation_date}
                 id={item.id}
                 getTodos={props.getTodos}
               />

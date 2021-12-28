@@ -5,6 +5,7 @@ import EditTodo from "./EditTodo";
 interface IndividualTodoProps {
   id: number;
   description: string;
+  creation_date: string;
   getTodos: () => Promise<void>;
 }
 
@@ -18,6 +19,11 @@ function IndividualTodo(props: IndividualTodoProps): JSX.Element {
     <>
       <tr>
         <td>{props.description}</td>
+        <td>
+          {props.creation_date
+            .replace("T", ", ")
+            .slice(0, props.creation_date.length - 7)}
+        </td>
         <td>
           <EditTodo
             description={props.description}
